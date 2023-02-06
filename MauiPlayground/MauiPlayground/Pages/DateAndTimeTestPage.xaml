@@ -5,12 +5,18 @@
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
   xmlns:local="clr-namespace:MauiPlayground.Pages"
+  xmlns:material="clr-namespace:UraniumUI.Material.Controls;assembly=UraniumUI.Material"
   xmlns:uranium="clr-namespace:UraniumUI.Pages;assembly=UraniumUI"
   xmlns:vm="clr-namespace:MauiPlayground.ViewModels">
   <uranium:UraniumContentPage.BindingContext>
     <vm:DateAndTimeViewModel />
   </uranium:UraniumContentPage.BindingContext>
-  <StackLayout>
+  <StackLayout Spacing="10">
+    <Label Text="Normal DatePicker" />
+    <material:DatePickerField Title="TestDate" AllowClear="True" Date="{Binding SampleDate}" />
+    <Label Text="Normal TimePicker" />
+    <material:TimePickerField Title="TestTime" AllowClear="True" Time="{Binding SampleTime}" />
+    <Label Text="Combined DateAndTimePicker" />
     <ctrls:DateAndTimePickerView DateAndTime="{Binding SampleDate}" LabelColor="Red" LabelTextDate="{Binding TestString}" />
   </StackLayout>
 </uranium:UraniumContentPage>

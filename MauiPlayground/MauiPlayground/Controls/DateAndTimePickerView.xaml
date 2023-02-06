@@ -6,14 +6,19 @@
   xmlns:material="clr-namespace:UraniumUI.Material.Controls;assembly=UraniumUI.Material"
   xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
   x:Name="self">
-  <HorizontalStackLayout>
-    <material:DatePickerField Title="{Binding LabelTextDate, Source={x:Reference self}}" AllowClear="True" Date="{Binding DateOnly, Source={x:Reference self}}" />
+  <StackLayout Orientation="Horizontal">
+    <!--  TODO Understand the freaking layout  -->
+    <material:DatePickerField
+      Title="{Binding LabelTextDate, Source={x:Reference self}}"
+      WidthRequest="200"
+      HorizontalOptions="FillAndExpand"
+      AllowClear="True"
+      Date="{Binding DateOnly, Source={x:Reference self}}" />
     <material:TimePickerField
       Title="{Binding LabelTextTime, Source={x:Reference self}}"
-      HorizontalOptions="FillAndExpand"
-      VerticalOptions="End"
+      WidthRequest="100"
       AllowClear="True"
       Format="HH:mm"
       Time="{Binding TimeOnly, Source={x:Reference self}}" />
-  </HorizontalStackLayout>
+  </StackLayout>
 </ContentView>

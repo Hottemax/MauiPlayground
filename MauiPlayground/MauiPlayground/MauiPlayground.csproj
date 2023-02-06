@@ -59,6 +59,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\DateAndTimeTestPage.xaml.cs">
+	    <DependentUpon>DateAndTimeTestPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\DateAndTimeTestPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\FontImages.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\MaterialColorOverride.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
