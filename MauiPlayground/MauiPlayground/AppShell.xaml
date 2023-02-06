@@ -36,7 +36,7 @@
     </Tab>
     <!--  ADD MORE CONTENT HERE IF DESIRED /  -->
     <Tab Title="TestContent2">
-      <ShellContent Title="TestContent 21" ContentTemplate="{DataTemplate pages:TestContentPage}" />
+      <ShellContent Title="DateAndTime" ContentTemplate="{DataTemplate pages:DateAndTimeTestPage}" />
       <ShellContent Title="TestContent 22" ContentTemplate="{DataTemplate pages:TestContentPage}" />
     </Tab>
   </FlyoutItem>

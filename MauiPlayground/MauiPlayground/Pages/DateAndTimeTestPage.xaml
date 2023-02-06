@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<uranium:UraniumContentPage
+  x:Class="MauiPlayground.Pages.DateAndTimeTestPage"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
+  xmlns:local="clr-namespace:MauiPlayground.Pages"
+  xmlns:uranium="clr-namespace:UraniumUI.Pages;assembly=UraniumUI"
+  xmlns:vm="clr-namespace:MauiPlayground.ViewModels">
+  <uranium:UraniumContentPage.BindingContext>
+    <vm:DateAndTimeViewModel />
+  </uranium:UraniumContentPage.BindingContext>
+  <StackLayout>
+    <ctrls:DateAndTimePickerView DateAndTime="{Binding SampleDate}" LabelColor="Red" LabelTextDate="{Binding TestString}" />
+  </StackLayout>
+</uranium:UraniumContentPage>
