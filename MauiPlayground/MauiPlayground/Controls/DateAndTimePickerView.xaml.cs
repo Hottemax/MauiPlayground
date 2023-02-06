@@ -16,10 +16,7 @@ public partial class DateAndTimePickerView : ContentView
         InitializeComponent();
         // TODO Check why the bindings work Source={x:Reference self} in xaml, but not with BindingContext ...
         //BindingContext = this;
-
-        //TODO Constructor will not be relevant when initialized via Binding
-        _dateOnly = DateAndTime?.Date;
-        _timeOnly = DateAndTime?.TimeOfDay;
+        Log.Debug($"After constructor, _dateOnly is {_dateOnly}");
     }
     public string LabelTextDate
     {
@@ -41,8 +38,24 @@ public partial class DateAndTimePickerView : ContentView
 
     public DateTime? DateAndTime
     {
-        get => (DateTime?)GetValue(DateAndTimeProperty);
-        set => SetValue(DateAndTimeProperty, value);
+        get
+        {
+            var value =  (DateTime?)GetValue(DateAndTimeProperty);
+            if (value is DateTime initialValue && _dateOnly is null && _timeOnly is null)
+            {
+                // Called only on initialization
+                _dateOnly = initialValue.Date;
+                _timeOnly = initialValue.TimeOfDay;
+            }
+
+            return value;
+        }
+
+        set
+        {
+            SetValue(DateAndTimeProperty, value);
+            
+        }
     }
 
     public DateTime? DateOnly
@@ -50,7 +63,7 @@ public partial class DateAndTimePickerView : ContentView
         get => _dateOnly;
         set
         {
-            DateAndTime = value?.Add(TimeOnly.Value);
+            _dateOnly = value;
             UpdateDateTime();
         }
     }

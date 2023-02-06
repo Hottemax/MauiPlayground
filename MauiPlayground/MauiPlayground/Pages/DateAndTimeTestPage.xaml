@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <uranium:UraniumContentPage
   x:Class="MauiPlayground.Pages.DateAndTimeTestPage"
   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -11,9 +11,10 @@
   <uranium:UraniumContentPage.BindingContext>
     <vm:DateAndTimeViewModel />
   </uranium:UraniumContentPage.BindingContext>
-  <StackLayout Spacing="10">
+  <StackLayout Margin="50" Spacing="20">
+        
     <Label Text="Normal DatePicker" />
-    <material:DatePickerField Title="TestDate" AllowClear="True" Date="{Binding SampleDate}" />
+    <material:DatePickerField Title="TestDate"  AllowClear="True" Date="{Binding SampleDate}" />
     <Label Text="Normal TimePicker" />
     <material:TimePickerField Title="TestTime" AllowClear="True" Time="{Binding SampleTime}" />
     <Label Text="Combined DateAndTimePicker" />

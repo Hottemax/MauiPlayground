@@ -6,6 +6,9 @@ public partial class DateAndTimeViewModel : ObservableObject
     public DateTime? _sampleDate = DateTime.Now;
 
     [ObservableProperty]
+    public DateTime? _someOtherDate = DateTime.Now;
+
+    [ObservableProperty]
     public TimeSpan? _sampleTime = new(hours: 3, minutes: 14, seconds: 0);
 
     [ObservableProperty]
