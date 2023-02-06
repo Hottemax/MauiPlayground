@@ -1,0 +1,6 @@
+compile:
+  stage: build
+  script:
+    # Clean and build
+    - dotnet restore
+    - dotnet build
