@@ -5,4 +5,5 @@ global using CommunityToolkit.Mvvm.Input;
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using MauiPlayground.ViewModels;
 global using MauiPlayground.Pages;
+global using Serilog;
 

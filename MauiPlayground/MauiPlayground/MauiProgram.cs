@@ -22,6 +22,8 @@ public static class MauiProgram
             });
 
         builder.Services.AddCommunityToolkitDialogs();
+        Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.Debug().CreateLogger();
+        builder.Logging.AddSerilog();
         return builder.Build();
     }
 }
