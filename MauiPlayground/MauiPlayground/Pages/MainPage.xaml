@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <uranium:UraniumContentPage
   x:Class="MauiPlayground.Pages.MainPage"
   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"

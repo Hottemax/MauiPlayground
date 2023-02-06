@@ -6,8 +6,9 @@
   xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
   xmlns:local="clr-namespace:MauiPlayground.Pages"
   xmlns:uranium="clr-namespace:UraniumUI.Pages">
+
   <StackLayout>
-    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Test Content" />
+    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="No content here, add some!" />
     <!--  This is where to insert your test content  -->
   </StackLayout>
 </uranium:UraniumContentPage>
