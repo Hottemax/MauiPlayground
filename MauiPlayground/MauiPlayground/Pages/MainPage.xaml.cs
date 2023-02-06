@@ -1,7 +1,7 @@
 ﻿using InputKit.Shared.Controls;
 using UraniumUI.Pages;
 
-namespace MauiPlayground;
+namespace MauiPlayground.Pages;
 
 public partial class MainPage : UraniumContentPage
 {

@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using UraniumUI;
 
-namespace MauiPlayground;
+namespace MauiPlayground.ViewModels;
 
 public class MainPageViewModel : BindableObject
 {

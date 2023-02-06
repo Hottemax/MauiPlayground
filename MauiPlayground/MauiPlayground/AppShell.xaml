@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Shell
-    x:Class="MauiPlayground.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiPlayground"
-    Shell.FlyoutBehavior="Disabled">
+  x:Class="MauiPlayground.AppShell"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
+  xmlns:local="clr-namespace:MauiPlayground"
+  xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
+  xmlns:pages="clr-namespace:MauiPlayground.Pages">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+  <Shell.FlyoutHeader>
+    <VerticalStackLayout Padding="20" StyleClass="PrimaryContainer">
+      <Label
+        Margin="10"
+        FontSize="Large"
+        HorizontalTextAlignment="Center"
+        Text="MauiPlayground" />
 
+      <Label HorizontalOptions="Center" Text="App Theme" />
+
+      <HorizontalStackLayout HorizontalOptions="Center">
+        <Label VerticalOptions="Center" Text="Light" />
+        <Switch x:Name="themeSwitch" Toggled="ThemeToggled" />
+        <Label VerticalOptions="Center" Text="Dark" />
+      </HorizontalStackLayout>
+    </VerticalStackLayout>
+  </Shell.FlyoutHeader>
+
+  <FlyoutItem Title="MainPage" Icon="{FontImageSource Glyph={x:Static m:MaterialOutlined.Home}, FontFamily=MaterialOutlined, Color={AppThemeBinding {StaticResource Primary}, Dark={StaticResource PrimaryDark}}}" Route="home">
+    <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
+  </FlyoutItem>
+
+  <FlyoutItem Title="TestContent" Icon="{FontImageSource Glyph={x:Static m:MaterialOutlined.Arrow_upward}, FontFamily=MaterialOutlined, Color={AppThemeBinding {StaticResource Primary}, Dark={StaticResource PrimaryDark}}}" Route="test">
+    <Tab Title="TestContent1">
+      <ShellContent Title="TestContent 11" ContentTemplate="{DataTemplate pages:TestContentPage}" Route="tc1" />
+    </Tab>
+    <!--  ADD MORE CONTENT HERE IF DESIRED /  -->
+    <Tab Title="TestContent2">
+      <ShellContent Title="TestContent 21" ContentTemplate="{DataTemplate pages:TestContentPage}" />
+      <ShellContent Title="TestContent 22" ContentTemplate="{DataTemplate pages:TestContentPage}" />
+    </Tab>
+  </FlyoutItem>
 </Shell>
+

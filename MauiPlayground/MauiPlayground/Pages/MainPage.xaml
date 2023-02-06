@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<uranium:UraniumContentPage
+  x:Class="MauiPlayground.Pages.MainPage"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:attachment="clr-namespace:UraniumUI.Material.Attachments;assembly=UraniumUI.Material"
+  xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+  xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
+  xmlns:material="clr-namespace:UraniumUI.Material.Controls;assembly=UraniumUI.Material"
+  xmlns:uranium="clr-namespace:UraniumUI.Pages;assembly=UraniumUI"
+  xmlns:vm="clr-namespace:MauiPlayground.ViewModels"
+  x:Name="page">
+  <uranium:UraniumContentPage.BindingContext>
+    <vm:MainPageViewModel />
+  </uranium:UraniumContentPage.BindingContext>
+
+  <uranium:UraniumContentPage.Resources>
+    <Style TargetType="Frame">
+      <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource SecondaryContainer}, Dark={StaticResource SecondaryContainerDark}}" />
+    </Style>
+  </uranium:UraniumContentPage.Resources>
+
+  <ScrollView>
+
+    <VerticalStackLayout Spacing="10">
+
+      <Button
+        HorizontalOptions="Center"
+        Command="{Binding RemoveSelectedItemsCommand}"
+        StyleClass="FilledTonalButton"
+        Text="Delete" />
+      <material:DataGrid
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        ItemsSource="{Binding Items}"
+        SelectedItems="{Binding SelectedItems}">
+        <material:DataGrid.Columns>
+          <material:DataGridSelectionColumn />
+
+          <material:DataGridColumn Title="Todo" PropertyName="Content" />
+
+          <material:DataGridColumn Title="Type" PropertyName="Type" />
+
+          <material:DataGridColumn Title="Done" PropertyName="IsDone" />
+
+        </material:DataGrid.Columns>
+      </material:DataGrid>
+    </VerticalStackLayout>
+
+  </ScrollView>
+
+  <uranium:UraniumContentPage.Attachments>
+    <attachment:BackdropView Title="Add" BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}" IconImageSource="{FontImageSource FontFamily=MaterialRegular, Glyph={x:Static m:MaterialRegular.Add_circle}, Color={StaticResource OnPrimary}}">
+      <VerticalStackLayout
+        Padding="25,30"
+        Spacing="10"
+        HorizontalOptions="Center"
+        MaximumWidthRequest="400">
+        <material:TextField
+          Title="What to do?"
+          AccentColor="{StaticResource OnPrimary}"
+          Icon="{FontImageSource FontFamily=MaterialRegular,
+                                 Glyph={x:Static m:MaterialRegular.Sticky_note_2}}"
+          Text="{Binding NewItem.Content}"
+          TextColor="{StaticResource OnPrimary}" />
+
+        <input:CheckBox
+          BorderColor="{StaticResource OnPrimary}"
+          IsChecked="{Binding NewItem.IsDone}"
+          Text="Is done"
+          TextColor="{StaticResource OnPrimary}"
+          Type="Filled"
+          Color="{StaticResource Primary}" />
+        <input:SelectionView
+          ColumnSpacing="-2"
+          ColumnNumber="4"
+          ItemsSource="{x:Static vm:TodoItem.AvailableTypes}"
+          SelectedItem="{Binding NewItem.Type}"
+          Color="{StaticResource Secondary}" />
+        <Button Command="{Binding AddNewItemCommand}" StyleClass="ElevatedButton" Text="Add" />
+      </VerticalStackLayout>
+    </attachment:BackdropView>
+    <attachment:BottomSheetView x:Name="bottomSheet">
+      <TableView Margin="0,0,0,40" BackgroundColor="Transparent" Intent="Menu">
+        <TableRoot>
+          <TableSection Title="Actions">
+            <ImageCell Detail="Share this content with friends." ImageSource="{FontImageSource FontFamily=MaterialRegular, Glyph={x:Static m:MaterialRegular.Share}, Color={StaticResource Primary}}" Text="Share" />
+            <ImageCell Detail="Get link to this content" ImageSource="{FontImageSource FontFamily=MaterialRegular, Glyph={x:Static m:MaterialRegular.Link}, Color={StaticResource Primary}}" Text="Link" />
+            <ImageCell Detail="Report this content." ImageSource="{FontImageSource FontFamily=MaterialRegular, Glyph={x:Static m:MaterialRegular.Report}, Color={StaticResource Primary}}" Text="Report" />
+          </TableSection>
+        </TableRoot>
+      </TableView>
+    </attachment:BottomSheetView>
+  </uranium:UraniumContentPage.Attachments>
+</uranium:UraniumContentPage>
