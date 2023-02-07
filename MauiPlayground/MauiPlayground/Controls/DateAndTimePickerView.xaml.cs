@@ -7,7 +7,7 @@ public partial class DateAndTimePickerView : ContentView
     private TimeSpan? _timeOnly;
 
     public static readonly BindableProperty DateAndTimeProperty = BindableProperty.Create(nameof(DateAndTime), typeof(DateTime?), typeof(DateAndTimePickerView), default(DateTime), BindingMode.TwoWay);
-    public static readonly BindableProperty LabelTextDateProperty = BindableProperty.Create(nameof(LabelTextDate), typeof(string), typeof(DateAndTimePickerView), string.Empty);
+    public static readonly BindableProperty LabelTextDateProperty = BindableProperty.Create(nameof(LabelTextDate), typeof(string), typeof(DateAndTimePickerView), "TEXTDATEDEFAULT");
     public static readonly BindableProperty LabelTextTimeProperty = BindableProperty.Create(nameof(LabelTextTime), typeof(string), typeof(DateAndTimePickerView), string.Empty);
     public static readonly BindableProperty LabelColorProperty = BindableProperty.Create(nameof(LabelColor), typeof(Color), typeof(DateAndTimePickerView));
 
@@ -20,49 +20,87 @@ public partial class DateAndTimePickerView : ContentView
     }
     public string LabelTextDate
     {
-        get => (string)GetValue(LabelTextDateProperty);
-        set => SetValue(LabelTextDateProperty, value);
+        get
+        {
+            var val = (string)GetValue(LabelTextDateProperty);
+            Log.Debug($"LabelTextDate get called, returning {val}");
+            return val;
+        }
+
+        set
+        {
+            Log.Debug($"LabelTextDate set called with value {value}");
+            SetValue(LabelTextDateProperty, value);
+        }
     }
 
     public string LabelTextTime
     {
-        get => (string)GetValue(LabelTextTimeProperty);
-        set => SetValue(LabelTextTimeProperty, value);
+        get
+        {
+            var val = (string)GetValue(LabelTextTimeProperty);
+            Log.Debug($"LabelTextTime get called, returning {val}");
+            return val;
+        }
+
+        set
+        {
+            Log.Debug($"LabelTextTime set called with value {value}");
+            SetValue(LabelTextTimeProperty, value);
+        }
     }
 
     public Color LabelColor
     {
-        get => (Color)GetValue(LabelColorProperty);
-        set => SetValue(LabelColorProperty, value);
+        get
+        {
+            var val =  (Color)GetValue(LabelColorProperty);
+            Log.Debug($"LabelTextColor get called, returning {val}");
+            return val;
+        }
+
+        set
+        {
+            Log.Debug($"LabelColor set called with value {value}");
+            SetValue(LabelColorProperty, value);
+        }
     }
 
     public DateTime? DateAndTime
     {
         get
         {
-            var value =  (DateTime?)GetValue(DateAndTimeProperty);
-            if (value is DateTime initialValue && _dateOnly is null && _timeOnly is null)
+            var val =  (DateTime?)GetValue(DateAndTimeProperty);
+            Log.Debug($"DateAndTime get called, returning {val}");
+            if (val is DateTime initialValue && _dateOnly is null && _timeOnly is null)
             {
                 // Called only on initialization
+                Log.Debug($"Initializing backing stores _dateOnly, _timeOnly");
                 _dateOnly = initialValue.Date;
                 _timeOnly = initialValue.TimeOfDay;
             }
 
-            return value;
+            return val;
         }
 
         set
         {
+            Log.Debug($"DateAndTime set called with value {value}");
             SetValue(DateAndTimeProperty, value);
-            
         }
     }
 
     public DateTime? DateOnly
     {
-        get => _dateOnly;
+        get
+        {
+            Log.Debug($"DateOnly get called, returning {_dateOnly}");
+            return _dateOnly;
+        }
+
         set
         {
+            Log.Debug($"DateOnly set called with value {value}");
             _dateOnly = value;
             UpdateDateTime();
         }
@@ -70,9 +108,15 @@ public partial class DateAndTimePickerView : ContentView
 
     public TimeSpan? TimeOnly
     {
-        get => _timeOnly;
+        get
+        {
+            Log.Debug($"TimeOnly get called, returning {_timeOnly}");
+            return _timeOnly;
+        }
+
         set
         {
+            Log.Debug($"TimeOnly set called with value {value}");
             _timeOnly = value;
             UpdateDateTime();
         }
@@ -80,6 +124,8 @@ public partial class DateAndTimePickerView : ContentView
 
     private void UpdateDateTime()
     {
+
+        Log.Debug($"UpdateDateTime() called, current state: DateOnly: {DateOnly}, TimeOnly: {TimeOnly}");
         // TODO Logic: Update of DateOnly, TimeOnly only on first initialization, then one way to DateAndTime ...
         DateAndTime = (DateOnly, TimeOnly) switch
         {
@@ -87,5 +133,6 @@ public partial class DateAndTimePickerView : ContentView
             (var date, null) => date,
             (var date, var time) => date.Value.Add(time.Value),
         };
+        Log.Debug($"UpdateDateTime() set DateAndTime to {DateAndTime}");
     }
 }

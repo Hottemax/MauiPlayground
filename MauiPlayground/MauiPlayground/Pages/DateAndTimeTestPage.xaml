@@ -12,9 +12,8 @@
     <vm:DateAndTimeViewModel />
   </uranium:UraniumContentPage.BindingContext>
   <StackLayout Margin="50" Spacing="20">
-        
     <Label Text="Normal DatePicker" />
-    <material:DatePickerField Title="TestDate"  AllowClear="True" Date="{Binding SampleDate}" />
+    <material:DatePickerField Title="TestDate" AllowClear="True" Date="{Binding SampleDate}" />
     <Label Text="Normal TimePicker" />
     <material:TimePickerField Title="TestTime" AllowClear="True" Time="{Binding SampleTime}" />
     <Label Text="Combined DateAndTimePicker" />

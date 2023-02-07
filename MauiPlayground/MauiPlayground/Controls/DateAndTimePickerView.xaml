@@ -13,7 +13,8 @@
       WidthRequest="200"
       HorizontalOptions="FillAndExpand"
       AllowClear="True"
-      Date="{Binding DateOnly, Source={x:Reference self}}" />
+      Date="{Binding DateOnly, Source={x:Reference self}}"
+      TitleColor="{Binding LabelColor, Source={x:Reference self}}" />
     <material:TimePickerField
       Title="{Binding LabelTextTime, Source={x:Reference self}}"
       WidthRequest="100"
