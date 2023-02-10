@@ -7,16 +7,11 @@
   xmlns:local="clr-namespace:MauiPlayground.Pages"
   xmlns:material="clr-namespace:UraniumUI.Material.Controls;assembly=UraniumUI.Material"
   xmlns:uranium="clr-namespace:UraniumUI.Pages;assembly=UraniumUI"
-  xmlns:vm="clr-namespace:MauiPlayground.ViewModels">
-  <uranium:UraniumContentPage.BindingContext>
-    <vm:DateAndTimeViewModel />
-  </uranium:UraniumContentPage.BindingContext>
+  xmlns:vm="clr-namespace:MauiPlayground.ViewModels"
+  x:DataType="vm:DateAndTimeViewModel">
   <StackLayout Margin="50" Spacing="20">
-    <Label Text="Normal DatePicker" />
-    <material:DatePickerField Title="TestDate" AllowClear="True" Date="{Binding SampleDate}" />
-    <Label Text="Normal TimePicker" />
-    <material:TimePickerField Title="TestTime" AllowClear="True" Time="{Binding SampleTime}" />
+    <Label Text="{Binding SampleDate}" />
     <Label Text="Combined DateAndTimePicker" />
-    <ctrls:DateAndTimePickerView DateAndTime="{Binding SampleDate}" LabelColor="Red" LabelTextDate="{Binding TestString}" />
+    <ctrls:DateAndTimePickerView DateAndTime="{Binding SampleDate}" LabelTextDate="{Binding TestStringDate}" LabelTextTime="{Binding TestStringTime}" />
   </StackLayout>
 </uranium:UraniumContentPage>

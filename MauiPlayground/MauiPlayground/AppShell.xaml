@@ -27,16 +27,17 @@
   </Shell.FlyoutHeader>
 
   <FlyoutItem Title="MainPage" Icon="{FontImageSource Glyph={x:Static m:MaterialOutlined.Home}, FontFamily=MaterialOutlined, Color={AppThemeBinding {StaticResource Primary}, Dark={StaticResource PrimaryDark}}}" Route="home">
-    <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
+    <ShellContent Title="Main" ContentTemplate="{DataTemplate pages:MainPage}" />
+    <ShellContent Title="DateAndTime" ContentTemplate="{DataTemplate pages:DateAndTimeTestPage}" />
   </FlyoutItem>
 
   <FlyoutItem Title="TestContent" Icon="{FontImageSource Glyph={x:Static m:MaterialOutlined.Arrow_upward}, FontFamily=MaterialOutlined, Color={AppThemeBinding {StaticResource Primary}, Dark={StaticResource PrimaryDark}}}" Route="test">
-    <Tab Title="TestContent1" Icon="{StaticResource IconCalendarMonth}">
+    <Tab Title="TestContent1" Icon="{StaticResource IconDate}">
       <ShellContent Title="TestContent 11" ContentTemplate="{DataTemplate pages:TestContentPage}" Route="tc1" />
     </Tab>
     <!--  ADD MORE CONTENT HERE IF DESIRED /  -->
     <Tab Title="TestContent2" Icon="{StaticResource IconAccount}">
-      <ShellContent Title="DateAndTime" ContentTemplate="{DataTemplate pages:DateAndTimeTestPage}" />
+      <ShellContent Title="TestContent 21" ContentTemplate="{DataTemplate pages:TestContentPage}" />
       <ShellContent Title="TestContent 22" ContentTemplate="{DataTemplate pages:TestContentPage}" />
     </Tab>
   </FlyoutItem>

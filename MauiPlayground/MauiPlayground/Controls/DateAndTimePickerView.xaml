@@ -3,23 +3,28 @@
   x:Class="MauiPlayground.Controls.DateAndTimePickerView"
   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
   xmlns:material="clr-namespace:UraniumUI.Material.Controls;assembly=UraniumUI.Material"
   xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-  x:Name="self">
-  <StackLayout Orientation="Horizontal">
-    <!--  TODO Understand the freaking layout  -->
-    <material:DatePickerField
-      Title="{Binding LabelTextDate, Source={x:Reference self}}"
-      WidthRequest="200"
-      HorizontalOptions="FillAndExpand"
-      AllowClear="True"
-      Date="{Binding DateOnly, Source={x:Reference self}}"
-      TitleColor="{Binding LabelColor, Source={x:Reference self}}" />
-    <material:TimePickerField
-      Title="{Binding LabelTextTime, Source={x:Reference self}}"
-      WidthRequest="100"
-      AllowClear="True"
-      Format="HH:mm"
-      Time="{Binding TimeOnly, Source={x:Reference self}}" />
-  </StackLayout>
+  x:Name="self"
+  x:DataType="ctrls:DateAndTimePickerView">
+  <ContentView.Content>
+    <StackLayout Spacing="10" BindingContext="{x:Reference self}" Orientation="Horizontal">
+      <material:DatePickerField
+        Title="{Binding LabelTextDate}"
+        HorizontalOptions="FillAndExpand"
+        AllowClear="True"
+        Date="{Binding DateOnly}"
+        Icon="{StaticResource IconDate}"
+        TitleColor="{Binding LabelColor}" />
+      <material:TimePickerField
+        Title="{Binding LabelTextTime}"
+        AllowClear="True"
+        Format="HH:mm"
+        Icon="{StaticResource IconTime}"
+        MinimumWidthRequest="120"
+        Time="{Binding TimeOnly}"
+        TitleColor="{Binding LabelColor}" />
+    </StackLayout>
+  </ContentView.Content>
 </ContentView>

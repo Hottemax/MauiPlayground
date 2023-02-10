@@ -4,9 +4,15 @@
   <ResourceDictionary Source="Colors.xaml" />
 
   <FontImageSource
-    x:Key="IconCalendarMonth"
+    x:Key="IconDate"
     FontFamily="MaterialRegular"
     Glyph="{x:Static m:MaterialRegular.Calendar_month}"
+    Color="{AppThemeBinding Light={StaticResource Black},
+                            Dark={StaticResource White}}" />
+  <FontImageSource
+    x:Key="IconTime"
+    FontFamily="MaterialRegular"
+    Glyph="{x:Static m:MaterialRegular.Schedule}"
     Color="{AppThemeBinding Light={StaticResource Black},
                             Dark={StaticResource White}}" />
   <FontImageSource

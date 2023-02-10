@@ -12,8 +12,15 @@ public partial class DateAndTimeViewModel : ObservableObject
     public TimeSpan? _sampleTime = new(hours: 3, minutes: 14, seconds: 0);
 
     [ObservableProperty]
-    public string _testString = "Test";
+    public string _testStringDate = "TestDate";
 
+    [ObservableProperty]
+    public string _testStringTime = "TestTime";
+
+    public DateAndTimeViewModel()
+    {
+        SampleDate = DateTime.Now;
+    }
     partial void OnSampleDateChanged(DateTime? value)
     {
         Log.Debug($"SampleDate changed to {value}");
