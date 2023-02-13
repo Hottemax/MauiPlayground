@@ -29,6 +29,7 @@
   <FlyoutItem Title="MainPage" Icon="{FontImageSource Glyph={x:Static m:MaterialOutlined.Home}, FontFamily=MaterialOutlined, Color={AppThemeBinding {StaticResource Primary}, Dark={StaticResource PrimaryDark}}}" Route="home">
     <ShellContent Title="Main" ContentTemplate="{DataTemplate pages:MainPage}" />
     <ShellContent Title="DateAndTime" ContentTemplate="{DataTemplate pages:DateAndTimeTestPage}" />
+    <ShellContent Title="Entry" ContentTemplate="{DataTemplate pages:EntryControlTestPage}" />
   </FlyoutItem>
 
   <FlyoutItem Title="TestContent" Icon="{FontImageSource Glyph={x:Static m:MaterialOutlined.Arrow_upward}, FontFamily=MaterialOutlined, Color={AppThemeBinding {StaticResource Primary}, Dark={StaticResource PrimaryDark}}}" Route="test">

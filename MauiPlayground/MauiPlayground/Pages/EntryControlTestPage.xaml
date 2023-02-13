@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<uranium:UraniumContentPage
+  x:Class="MauiPlayground.Pages.EntryControlTestPage"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
+  xmlns:inputkit="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+  xmlns:local="clr-namespace:MauiPlayground.Pages"
+  xmlns:material="clr-namespace:UraniumUI.Material.Controls;assembly=UraniumUI.Material"
+  xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+  xmlns:uranium="clr-namespace:UraniumUI.Pages;assembly=UraniumUI"
+  xmlns:v="clr-namespace:UraniumUI.Validations;assembly=UraniumUI.Validations.DataAnnotations"
+  xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+  xmlns:vm="clr-namespace:MauiPlayground.ViewModels">
+  <uranium:UraniumContentPage.ToolbarItems>
+    <!--  expected to validate input fields bit not working as expected.  -->
+    <ToolbarItem inputkit:FormView.IsSubmitButton="True" Text="Upload" />
+  </uranium:UraniumContentPage.ToolbarItems>
+  <uranium:UraniumContentPage.BindingContext>
+    <vm:EntryViewModel />
+  </uranium:UraniumContentPage.BindingContext>
+  <inputkit:FormView>
+    <StackLayout Margin="50" Spacing="20">
+
+      <material:TextField Title="Name" AllowClear="True" Text="{v:ValidationBinding Name}">
+        <validation:RequiredValidation />
+      </material:TextField>
+      <ctrls:BorderLessEntry Title=" Custom entry control - Password" IsPassword="True" Text="{Binding Password}">
+        <!--  It does not invoke unfocused event so need to use custom control  -->
+        <ctrls:BorderLessEntry.Behaviors>
+          <toolkit:EventToCommandBehavior Command="{Binding DbCommand}" EventName="Unfocused" />
+        </ctrls:BorderLessEntry.Behaviors>
+      </ctrls:BorderLessEntry>
+      <material:PickerField IsVisible="{Binding IsPickerVisible}" ItemsSource="{Binding Dbs}" />
+      <!--  Need to use this button to run validator else we need to use custom validators used in xamarin app  -->
+      <Button inputkit:FormView.IsSubmitButton="True" Text="Submit" />
+
+    </StackLayout>
+  </inputkit:FormView>
+</uranium:UraniumContentPage>

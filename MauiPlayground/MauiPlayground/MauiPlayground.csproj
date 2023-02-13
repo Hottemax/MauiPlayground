@@ -56,15 +56,22 @@
 		<PackageReference Include="UraniumUI.Material" Version="2.3.0" />
 		<PackageReference Include="UraniumUI.Icons.MaterialIcons" Version="2.3.0" />
 		<PackageReference Include="UraniumUI.Dialogs.CommunityToolkit" Version="2.3.0" />
+		<PackageReference Include="UraniumUI.Validations.DataAnnotations" Version="2.3.0" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\EntryControlTestPage.xaml.cs">
+	    <DependentUpon>EntryControlTestPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\DateAndTimeTestPage.xaml.cs">
 	    <DependentUpon>DateAndTimeTestPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\EntryControlTestPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\DateAndTimeTestPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
