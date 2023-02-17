@@ -25,6 +25,8 @@
       <material:TextField Title="Name" AllowClear="True" Text="{v:ValidationBinding Name}">
         <validation:RequiredValidation />
       </material:TextField>
+      <material:TextField Title="Text" IsReadonly="True" Text="ReadOnlyTextField - Bugged" />
+      <material:EditorField Title="Editor" IsReadonly="True" Text="ReadOnlyEditorField" />
       <ctrls:BorderLessEntry Title=" Custom entry control - Password" IsPassword="True" Text="{Binding Password}">
         <!--  It does not invoke unfocused event so need to use custom control  -->
         <ctrls:BorderLessEntry.Behaviors>
