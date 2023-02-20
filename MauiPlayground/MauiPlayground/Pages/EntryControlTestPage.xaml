@@ -23,10 +23,10 @@
     <StackLayout Margin="50" Spacing="20">
 
       <material:TextField Title="Name" AllowClear="True" Text="{v:ValidationBinding Name}">
-        <validation:RequiredValidation />
+        <validation:RequiredValidation Message="Fail" />
       </material:TextField>
-      <material:TextField Title="Text" IsReadonly="True" Text="ReadOnlyTextField - Bugged" />
-      <material:EditorField Title="Editor" IsReadonly="True" Text="ReadOnlyEditorField" />
+      <material:TextField Title="Text" IsReadOnly="True" Text="ReadOnlyTextField" />
+      <material:EditorField Title="Editor" IsReadOnly="False" Text="ReadOnlyEditorField" />
       <ctrls:BorderLessEntry Title=" Custom entry control - Password" IsPassword="True" Text="{Binding Password}">
         <!--  It does not invoke unfocused event so need to use custom control  -->
         <ctrls:BorderLessEntry.Behaviors>
