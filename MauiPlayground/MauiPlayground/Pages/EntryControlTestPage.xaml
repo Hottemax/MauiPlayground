@@ -21,12 +21,13 @@
   </uranium:UraniumContentPage.BindingContext>
   <inputkit:FormView>
     <StackLayout Margin="50" Spacing="20">
-
       <material:TextField Title="Name" AllowClear="True" Text="{v:ValidationBinding Name}">
         <validation:RequiredValidation Message="Fail" />
       </material:TextField>
       <material:TextField Title="Text" IsReadOnly="True" Text="ReadOnlyTextField" />
       <material:EditorField Title="Editor" IsReadOnly="False" Text="ReadOnlyEditorField" />
+
+      <ctrls:LabeledEntry HeightRequest="200" EntryText="LabeledEntryText" LabelText="LabeledEntryTitle" />
       <ctrls:BorderLessEntry Title=" Custom entry control - Password" IsPassword="True" Text="{Binding Password}">
         <!--  It does not invoke unfocused event so need to use custom control  -->
         <ctrls:BorderLessEntry.Behaviors>

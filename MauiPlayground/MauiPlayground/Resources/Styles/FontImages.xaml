@@ -27,4 +27,10 @@
     Glyph="{x:Static m:MaterialRegular.Add_circle_outline}"
     Color="{AppThemeBinding Light={StaticResource Black},
                             Dark={StaticResource White}}" />
+  <FontImageSource
+    x:Key="IconArrowRight"
+    FontFamily="MaterialRegular"
+    Glyph="{x:Static m:MaterialRegular.Chevron_right}"
+    Color="{AppThemeBinding Light={StaticResource Black},
+                            Dark={StaticResource White}}" />
 </ResourceDictionary>
