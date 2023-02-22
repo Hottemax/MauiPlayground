@@ -361,7 +361,7 @@
   </Style>
 
   <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
-    <Setter Property="Padding" Value="20" />
+    <Setter Property="Padding" Value="10" />
     <!--  Only usable when MaterialStyleOverride is present  -->
     <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource OnBackground}}" />-->
   </Style>
