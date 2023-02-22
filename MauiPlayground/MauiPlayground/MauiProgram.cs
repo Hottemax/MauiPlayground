@@ -21,7 +21,9 @@ public static class MauiProgram
                 fonts.AddMaterialIconFonts();
             });
 
-        builder.Services.AddCommunityToolkitDialogs();
+        builder.Services
+            .AddCommunityToolkitDialogs()
+            .AddLocalization();
         Log.Logger = new LoggerConfiguration().MinimumLevel.Debug().WriteTo.Debug().CreateLogger();
         builder.Logging.AddSerilog();
         return builder.Build();

@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<uranium:UraniumContentPage
+<ContentPage
   x:Class="MauiPlayground.Pages.TestContentPage"
   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
   xmlns:local="clr-namespace:MauiPlayground.Pages"
+  xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+  xmlns:resx="clr-namespace:MauiPlayground.Resources.Strings"
+  xmlns:translate="clr-namespace:MauiPlayground"
   xmlns:uranium="clr-namespace:UraniumUI.Pages">
-
-  <StackLayout>
-    <Label HorizontalOptions="Center" VerticalOptions="Center" Text="No content here, add some!" />
-    <!--  This is where to insert your test content  -->
-  </StackLayout>
-</uranium:UraniumContentPage>
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Style="{StaticResource ExplicitMarginLabel}" Text="TESTLABEL -EXPLICIT STYLE (MARGIN 20)" />
+      <Label Text="TESTLABEL2 - IMPLICIT STYLE (MARGIN 20) " />
+      <Label Margin="20" Text="TESTLABEL3 - EXPLICITMARGIN" />
+      <material:TextField Title="LocalizeStatic" Text="{x:Static resx:MyStrings.HelloWorld}" />
+      <material:TextField Title="LocalizeExtension" Text="{translate:Localize HellosWorld}" />
+      <!--  This is where to insert your test content  -->
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

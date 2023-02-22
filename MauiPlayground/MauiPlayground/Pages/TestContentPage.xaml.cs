@@ -1,6 +1,6 @@
 ﻿namespace MauiPlayground.Pages;
 
-public partial class TestContentPage : UraniumUI.Pages.UraniumContentPage
+public partial class TestContentPage : ContentPage
 {
     public TestContentPage()
     {

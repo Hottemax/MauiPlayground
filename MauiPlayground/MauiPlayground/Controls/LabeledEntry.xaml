@@ -14,7 +14,9 @@
 
         <!--  TODO Add other bindings, do renaming etc if basic layout works  -->
 
-        <material:TextField Title="{Binding LabelText}" Grid.ColumnSpan="2" Text="{Binding EntryText}" />
+        <material:TextField Title="{Binding LabelText}" Grid.ColumnSpan="2" Text="{Binding EntryText}">
+          <material:TextField.Behaviors />
+        </material:TextField>
         <ImageButton
           Grid.Column="1"
           WidthRequest="20"
