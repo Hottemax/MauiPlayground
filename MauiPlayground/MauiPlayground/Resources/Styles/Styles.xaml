@@ -156,7 +156,6 @@
   </Style>
 
   <Style TargetType="Label">
-    <Setter Property="Margin" Value="30" />
     <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Gray900}, Dark={StaticResource White}}" />
     <Setter Property="FontFamily" Value="OpenSansRegular" />
     <Setter Property="FontSize" Value="14" />
@@ -363,24 +362,19 @@
 
   <Style ApplyToDerivedTypes="True" TargetType="ContentPage">
     <Setter Property="Padding" Value="20" />
-    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource OnBackground}}" />
+    <!--  Only usable when MaterialStyleOverride is present  -->
+    <!--<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Background}, Dark={StaticResource OnBackground}}" />-->
   </Style>
 
-  <!--  TODO Figure out why implicit styles are NOT applied when page is loaded. This is also true for normal entries etc!!!  -->
   <!--  Material TextFields need a little Margin to not interfere with surrounding controls  -->
   <Style TargetType="material:TextField">
-    <Setter Property="Margin" Value="20" />
+    <Setter Property="Margin" Value="5" />
   </Style>
 
   <!--  Material TextFields need a little Margin to not interfere with surrounding controls  -->
   <Style TargetType="material:EditorField">
     <Setter Property="Margin" Value="5" />
   </Style>
-
-  <Style x:Key="ExplicitMarginLabel" TargetType="Label">
-    <Setter Property="Margin" Value="20" />
-  </Style>
-
 
   <Style ApplyToDerivedTypes="True" TargetType="Shell">
     <Setter Property="Shell.BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource Gray950}}" />

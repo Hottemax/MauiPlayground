@@ -76,6 +76,9 @@
 	  <MauiXaml Update="Pages\DateAndTimeTestPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Resources\Styles\CustomStyles.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Resources\Styles\FontImages.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
