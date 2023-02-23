@@ -11,10 +11,7 @@
   <ContentView.Content>
     <StackLayout>
       <Grid BindingContext="{x:Reference self}">
-
-        <!--  TODO Add other bindings, do renaming etc if basic layout works  -->
-
-        <material:TextField Title="{Binding LabelText}" Grid.ColumnSpan="2" Text="{Binding EntryText}">
+        <material:TextField Title="{Binding Title}" Grid.ColumnSpan="2" Text="{Binding Text}">
           <material:TextField.Behaviors />
         </material:TextField>
         <ImageButton
@@ -26,7 +23,7 @@
           BackgroundColor="Transparent"
           Command="{Binding Cmd}"
           CommandParameter="{Binding CmdParam}"
-          Source="{Binding CmdButtonImage, TargetNullValue={StaticResource IconArrowRight}}" />
+          Source="{StaticResource IconArrowRight}" />
       </Grid>
     </StackLayout>
   </ContentView.Content>

@@ -4,7 +4,7 @@ namespace MauiPlayground.Controls;
 // <Summary> Existing textfield does not invoke unfocused event so need to extend it.
 public class BorderLessEntry : TextField
 {
-    public event EventHandler<FocusEventArgs> Unfocused;
+    public new event EventHandler<FocusEventArgs> Unfocused;
     protected override void OnHandlerChanged()
     {
         EntryView.Unfocused += EntryView_Unfocused;

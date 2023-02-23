@@ -37,11 +37,11 @@
         <material:DataGrid.Columns>
           <material:DataGridSelectionColumn />
 
-          <material:DataGridColumn Title="Todo" PropertyName="Content" />
+          <material:DataGridColumn Title="Todo" Binding="{Binding Content}" />
 
-          <material:DataGridColumn Title="Type" PropertyName="Type" />
+          <material:DataGridColumn Title="Type" Binding="{Binding Type}" />
 
-          <material:DataGridColumn Title="Done" PropertyName="IsDone" />
+          <material:DataGridColumn Title="Done" Binding="{Binding IsDone}" />
 
         </material:DataGrid.Columns>
       </material:DataGrid>

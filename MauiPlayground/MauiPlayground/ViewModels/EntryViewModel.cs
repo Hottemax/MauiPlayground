@@ -12,10 +12,15 @@ internal partial class EntryViewModel : ObservableValidator
     [ObservableProperty]
     private string _password;
     public List<string> Dbs { get; set; } = new List<string> { "test1", "test2" };
+
     [ObservableProperty]
     private bool _isPickerVisible = false;
-    public Command DbCommand => new(GetDb);
-    // Somehow relaycommand is not working with toollkit:eventtocommand` need to invstigate further
-    //[RelayCommand]
-    public void GetDb() => IsPickerVisible = true;
+
+
+    [RelayCommand]
+    public void Sample(string moo)
+    {
+        Name += "C";
+        Log.Debug("SampleCommandInvoked");
+    }
 }

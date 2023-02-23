@@ -6,7 +6,7 @@ namespace MauiPlayground;
 [ContentProperty(nameof(Key))]
 public class LocalizeExtension : IMarkupExtension<string>
 {
-    IStringLocalizer<MyStrings> _localizer;
+    private readonly IStringLocalizer<MyStrings> _localizer;
 
     public string Key { get; set; } = string.Empty;
 

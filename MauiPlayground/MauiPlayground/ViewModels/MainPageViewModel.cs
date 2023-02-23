@@ -54,7 +54,7 @@ public class TodoItem : UraniumBindableObject
 
     public TodoItemType Type { get; set; }
 
-    public static TodoItemType[] AvailableTypes => Enum.GetValues(typeof(TodoItemType)) as TodoItemType[];
+    public static List<TodoItemType> AvailableTypes => Enum.GetValues(typeof(TodoItemType)).Cast<TodoItemType>().ToList();
 
     public enum TodoItemType
     {

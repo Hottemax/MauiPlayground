@@ -22,12 +22,16 @@
   <inputkit:FormView>
     <StackLayout>
       <material:TextField Title="Name" AllowClear="True" Text="{v:ValidationBinding Name}">
-        <validation:RequiredValidation Message="Fail" />
+        <validation:RequiredValidation />
       </material:TextField>
       <material:TextField Title="Text" IsReadOnly="True" Text="ReadOnlyTextField" />
       <material:EditorField Title="Editor" IsReadOnly="True" Text="ReadOnlyEditorField" />
 
-      <ctrls:LabeledEntry EntryText="LabeledEntryText" LabelText="LabeledEntryTitle" />
+      <ctrls:LabeledEntry
+        Title="LabeledEntryTitle"
+        Cmd="{Binding SampleCommand}"
+        CmdParam="{Binding Name}"
+        Text="{Binding Name}" />
       <ctrls:BorderLessEntry Title=" Custom entry control - Password" IsPassword="True" Text="{Binding Password}">
         <!--  It does not invoke unfocused event so need to use custom control  -->
         <ctrls:BorderLessEntry.Behaviors>
