@@ -28,6 +28,10 @@ public partial class LabeledEntry : ContentView
     /// <summary> Optional parameter for the ICommand </summary>
     public static readonly BindableProperty CmdParamProperty = BindableProperty.Create(nameof(CmdParam), typeof(string), typeof(LabeledEntry), string.Empty);
 
+    /// <summary> ImageSource of the button (default usually set in the ControlTemplate is "{StaticResource IconArrowRight}") </summary>
+    public static readonly BindableProperty CmdButtonImageProperty = BindableProperty.Create(nameof(CmdButtonImage), typeof(ImageSource), typeof(LabeledEntry), default(ImageSource));
+
+
     public LabeledEntry()
     {
         InitializeComponent();
@@ -44,4 +48,5 @@ public partial class LabeledEntry : ContentView
 
     public ICommand Cmd { get => (ICommand)GetValue(CmdProperty); set => SetValue(CmdProperty, value); }
     public string CmdParam { get => (string)GetValue(CmdParamProperty); set => SetValue(CmdParamProperty, value); }
+    public ImageSource CmdButtonImage { get => (ImageSource)GetValue(CmdButtonImageProperty); set => SetValue(CmdButtonImageProperty, value); }
 }

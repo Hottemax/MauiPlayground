@@ -23,7 +23,7 @@
           BackgroundColor="Transparent"
           Command="{Binding Cmd}"
           CommandParameter="{Binding CmdParam}"
-          Source="{StaticResource IconArrowRight}" />
+          Source="{Binding CmdButtonImage, TargetNullValue={StaticResource IconArrowRight}}" />
       </Grid>
     </StackLayout>
   </ContentView.Content>
