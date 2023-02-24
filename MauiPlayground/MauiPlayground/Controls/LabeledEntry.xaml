@@ -11,12 +11,16 @@
   <ContentView.Content>
     <StackLayout>
       <Grid BindingContext="{x:Reference self}">
-        <material:TextField Title="{Binding Title}" Grid.ColumnSpan="2" Text="{Binding Text}">
+        <material:TextField
+          Title="{Binding Title}"
+          Grid.ColumnSpan="2"
+          Icon="{StaticResource IconAccount}"
+          Text="{Binding Text}">
           <material:TextField.Behaviors />
         </material:TextField>
         <ImageButton
           Grid.Column="1"
-          WidthRequest="20"
+          WidthRequest="30"
           Margin="0,0,10,0"
           HorizontalOptions="End"
           VerticalOptions="Center"

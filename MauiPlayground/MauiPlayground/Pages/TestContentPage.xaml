@@ -12,8 +12,8 @@
   <ContentPage.Content>
     <StackLayout>
       <Label Style="{StaticResource ExplicitMarginLabel}" Text="TESTLABEL -EXPLICIT STYLE (MARGIN 20)" />
-      <Label Text="TESTLABEL2 - IMPLICIT STYLE (MARGIN 20) " />
-      <Label Margin="20" Text="TESTLABEL3 - EXPLICITMARGIN" />
+      <Label Text="TESTLABEL2 - IMPLICIT STYLE (Normal...) " />
+      <Label Margin="30" Text="TESTLABEL3 - EXPLICITMARGIN (30)" />
       <material:TextField Title="LocalizeStatic" Text="{x:Static resx:MyStrings.HelloWorld}" />
       <material:TextField Title="LocalizeExtension" Text="{translate:Localize HellosWorld}" />
       <!--  This is where to insert your test content  -->

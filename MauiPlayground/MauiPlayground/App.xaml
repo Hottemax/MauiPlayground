@@ -14,6 +14,7 @@
         <!--  TODO Order dependent, for now ensure Styles.xaml is used last https://github.com/enisn/UraniumUI/issues/241  -->
         <ResourceDictionary Source="Resources/Styles/MaterialStyleOverride.xaml" />
         <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+        <ResourceDictionary Source="Resources/Styles/CustomStyles.xaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Application.Resources>
