@@ -8,6 +8,7 @@ internal partial class EntryViewModel : ObservableValidator
     [Required]
     [ObservableProperty]
     private string _name;
+
     [Required]
     [ObservableProperty]
     private string _password;

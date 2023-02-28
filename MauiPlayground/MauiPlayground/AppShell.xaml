@@ -39,7 +39,7 @@
     <!--  ADD MORE CONTENT HERE IF DESIRED /  -->
     <Tab Title="TestContent2" Icon="{StaticResource IconAccount}">
       <ShellContent Title="TestContent 21" ContentTemplate="{DataTemplate pages:TestContentPage}" />
-      <ShellContent Title="TestContent 22" ContentTemplate="{DataTemplate pages:TestContentPage}" />
+      <ShellContent Title="TestContent 22" ContentTemplate="{DataTemplate pages:TabViewPage}" />
     </Tab>
   </FlyoutItem>
 </Shell>

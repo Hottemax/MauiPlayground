@@ -66,6 +66,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Pages\TabViewPage.xaml.cs">
+	    <DependentUpon>TabViewPage.xaml</DependentUpon>
+	  </Compile>
 	  <Compile Update="Pages\EntryControlTestPage.xaml.cs">
 	    <DependentUpon>EntryControlTestPage.xaml</DependentUpon>
 	  </Compile>
@@ -75,6 +78,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Controls\CmdTextField.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\TabViewPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\EntryControlTestPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

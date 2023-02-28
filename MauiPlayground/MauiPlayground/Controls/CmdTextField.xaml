@@ -1,33 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView
-  x:Class="MauiPlayground.Controls.LabeledEntry"
+  x:Class="MauiPlayground.Controls.CmdTextField"
   xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
   xmlns:ctrls="clr-namespace:MauiPlayground.Controls"
   xmlns:material="clr-namespace:UraniumUI.Material.Controls;assembly=UraniumUI.Material"
-  xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
   x:Name="self"
-  x:DataType="ctrls:LabeledEntry">
+  x:DataType="ctrls:CmdTextField">
   <ContentView.Content>
     <StackLayout>
       <Grid BindingContext="{x:Reference self}">
         <material:TextField
+          x:Name="textField"
           Title="{Binding Title}"
           Grid.ColumnSpan="2"
-          Icon="{StaticResource IconAccount}"
+          Icon="{Binding Icon}"
           Text="{Binding Text}">
           <material:TextField.Behaviors />
         </material:TextField>
         <ImageButton
           Grid.Column="1"
-          WidthRequest="30"
+          WidthRequest="20"
           Margin="0,0,10,0"
           HorizontalOptions="End"
           VerticalOptions="Center"
           BackgroundColor="Transparent"
           Command="{Binding Cmd}"
           CommandParameter="{Binding CmdParam}"
-          Source="{Binding CmdButtonImage, TargetNullValue={StaticResource IconArrowRight}}" />
+          Source="{Binding CmdIcon, TargetNullValue={StaticResource IconArrowRight}}" />
       </Grid>
     </StackLayout>
   </ContentView.Content>

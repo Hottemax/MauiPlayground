@@ -27,17 +27,17 @@
       <material:TextField Title="Text" IsReadOnly="True" Text="ReadOnlyTextField" />
       <material:EditorField Title="Editor" IsReadOnly="True" Text="ReadOnlyEditorField" />
 
-      <ctrls:LabeledEntry
-        Title="LabeledEntryTitle"
+      <ctrls:CmdTextField
+        Title="CmdTextFieldTitle"
         Cmd="{Binding SampleCommand}"
         CmdParam="{Binding Name}"
         Text="{Binding Name}" />
-      <ctrls:BorderLessEntry Title=" Custom entry control - Password" IsPassword="True" Text="{Binding Password}">
+      <ctrls:EventTextField Title=" Custom entry control - Password" IsPassword="True" Text="{Binding Password}">
         <!--  It does not invoke unfocused event so need to use custom control  -->
-        <ctrls:BorderLessEntry.Behaviors>
-          <toolkit:EventToCommandBehavior Command="{Binding DbCommand}" EventName="Unfocused" />
-        </ctrls:BorderLessEntry.Behaviors>
-      </ctrls:BorderLessEntry>
+        <ctrls:EventTextField.Behaviors>
+          <toolkit:EventToCommandBehavior Command="{Binding SampleCommand}" EventName="Unfocused" />
+        </ctrls:EventTextField.Behaviors>
+      </ctrls:EventTextField>
       <material:PickerField IsVisible="{Binding IsPickerVisible}" ItemsSource="{Binding Dbs}" />
       <!--  Need to use this button to run validator else we need to use custom validators used in xamarin app  -->
       <Button inputkit:FormView.IsSubmitButton="True" Text="Submit" />

@@ -1,8 +1,11 @@
 ﻿using UraniumUI.Material.Controls;
 
 namespace MauiPlayground.Controls;
-// <Summary> Existing textfield does not invoke unfocused event so need to extend it.
-public class BorderLessEntry : TextField
+
+/// <summary>
+/// TextField delegating events ...
+/// </summary>
+public class EventTextField : TextField
 {
     public new event EventHandler<FocusEventArgs> Unfocused;
     protected override void OnHandlerChanged()
