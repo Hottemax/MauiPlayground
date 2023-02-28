@@ -34,7 +34,6 @@ public partial class CmdTextField : ContentView
 
     public CmdTextField()
     {
-        textField.Any();
         InitializeComponent();
     }
 

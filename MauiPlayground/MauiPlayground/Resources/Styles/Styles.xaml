@@ -368,6 +368,10 @@
 
   <!--  Material InputFields need a little Margin to not interfere with surrounding controls  -->
   <!--  TODO Remove if https://github.com/enisn/UraniumUI/issues/249 fixed  -->
+  <Style TargetType="material:TextField">
+    <Setter Property="Margin" Value="5" />
+  </Style>
+
   <Style ApplyToDerivedTypes="True" TargetType="material:InputField">
     <Setter Property="Margin" Value="5" />
   </Style>

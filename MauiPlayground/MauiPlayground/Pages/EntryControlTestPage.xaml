@@ -26,6 +26,8 @@
       </material:TextField>
       <material:TextField Title="Text" IsReadOnly="True" Text="ReadOnlyTextField" />
       <material:EditorField Title="Editor" IsReadOnly="True" Text="ReadOnlyEditorField" />
+      <material:PickerField Title="TestPicker" />
+      <material:DatePickerField Title="TestDatePicker" />
 
       <ctrls:CmdTextField
         Title="CmdTextFieldTitle"
