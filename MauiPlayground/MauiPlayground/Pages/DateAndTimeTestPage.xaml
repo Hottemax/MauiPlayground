@@ -9,9 +9,15 @@
   xmlns:uranium="clr-namespace:UraniumUI.Pages;assembly=UraniumUI"
   xmlns:vm="clr-namespace:MauiPlayground.ViewModels"
   x:DataType="vm:DateAndTimeViewModel">
-  <StackLayout Margin="50" Spacing="20">
-    <Label Text="{Binding SampleDate}" />
-    <Label Text="Combined DateAndTimePicker" />
+  <StackLayout Spacing="20">
+    <Label Text="SampleDate" />
+    <material:TextField Title="BoundValue" Text="{Binding SampleDate}" />
+    <Button Command="{Binding SetToNullCommand}" Text="SetNull" />
+    <Button Command="{Binding SetToNewYearCommand}" Text="SetTo1-1" />
+    <Button Command="{Binding SetToNowCommand}" Text="SetToNow" />
+    <!--  Leaving this in as a cautionary tale; see summary comment in DateAndTimePicker.xaml.cs  -->
+    <!--  The reason is that the DatePicker only stores the Date portion of the DateTime, not the TimeOfDay  -->
+    <!--<material:DatePickerField Title="MatDate" Date="{Binding SampleDate}" />-->
     <ctrls:DateAndTimePickerView DateAndTime="{Binding SampleDate}" LabelTextDate="{Binding TestStringDate}" LabelTextTime="{Binding TestStringTime}" />
   </StackLayout>
 </uranium:UraniumContentPage>

@@ -1,6 +1,10 @@
 namespace MauiPlayground.Controls;
 
-/// <summary> View that gets passed a DateTime to BindableProperty DateAndTime, bind them to two Pickers and updates the original bound property accordingly </summary>
+/// <summary>
+/// View that gets passed a DateTime to BindableProperty DateAndTime, bind them to two Pickers and updates the original bound property accordingly
+/// Requires caution due to the default BindingMode.TwoWay on the BindableProperty DateAndTime: double-binding/combining with a DatePicker or
+/// similar date-only control in TwoWay mode might lead to unpredictable results/infinite OnPropertyChanged loops  -->
+/// </summary>
 public partial class DateAndTimePickerView : ContentView
 {
     public static readonly BindableProperty DateAndTimeProperty = BindableProperty.Create(nameof(DateAndTime), typeof(DateTime?), typeof(DateAndTimePickerView), default(DateTime), BindingMode.TwoWay, propertyChanged: DateAndTimeChanged);
@@ -11,12 +15,12 @@ public partial class DateAndTimePickerView : ContentView
     private static void DateAndTimeChanged(BindableObject bindable, object oldValue, object newValue)
     {
         if (bindable is DateAndTimePickerView view
-            && newValue is DateTime dt
             && oldValue != newValue)
         {
+            DateTime? dt = (DateTime?) newValue;
             Log.Debug($"DateAndTimeChanged from {oldValue} to {newValue}");
-            view.DateOnly = dt.Date;
-            view.TimeOnly = dt.TimeOfDay;
+            view.DateOnly = dt?.Date;
+            view.TimeOnly = dt?.TimeOfDay;
         }
     }
 
