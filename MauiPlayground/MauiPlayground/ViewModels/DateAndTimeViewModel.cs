@@ -32,5 +32,8 @@ public partial class DateAndTimeViewModel : ObservableObject
     public void SetToNewYear() => SampleDate = new(year: 2023, month: 1, day: 1, hour: 1, minute: 2, second: 0);
 
     [RelayCommand]
+    public void SetToNewYear2() => SampleDate = new(year: 2023, month: 1, day: 2, hour: 1, minute: 2, second: 0);
+
+    [RelayCommand]
     public void SetToNow() => SampleDate = DateTime.Now;
 }
